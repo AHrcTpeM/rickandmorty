@@ -1,0 +1,52 @@
+.card {
+    width: 240px;
+    height: 244px;
+    margin: 10px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(145, 253, 123);
+    }
+
+    .link {
+        color: black;
+        text-decoration: none;
+    }
+    
+    .photo {
+        margin: 0 auto;
+        width: 240px;
+        height: 168px;
+        background-size: 100% 100%;
+    }
+
+    .description {
+        margin: 16px 12px;
+        font-family: Roboto;
+
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .longname {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .species {
+            font-size: 14px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}

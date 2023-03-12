@@ -1,0 +1,11 @@
+.goback {
+    width: 108px;
+    height: 24px;
+    margin: 21px 50px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(145, 253, 123);
+        border-radius: 5px;
+    }
+}

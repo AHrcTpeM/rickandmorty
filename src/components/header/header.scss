@@ -1,0 +1,26 @@
+.header {
+    max-width: 100%;
+    min-width: 240px;
+    margin: 86px auto 0px;
+
+    border: 1px solid;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.25));
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:hover {
+        background-color: rgb(145, 253, 123);
+    }
+
+    @media (max-width: 680px) {
+        max-width: 90%;
+        margin: 86px 25px 0px;
+    }
+
+    @media (max-width: 400px) {
+        max-width: 80%;
+        margin: 86px 25px 0px;
+    }
+}

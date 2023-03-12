@@ -1,0 +1,22 @@
+.frame {
+    width: 413px;
+    height: 64px;
+    padding: 9px 16px;
+    border-bottom: 1px solid rgb(151, 151, 151);
+
+    .title {
+        font-size: 16px;   
+        font-weight: bold;
+        line-height: 24px;     
+    }
+
+    .second {
+        font-size: 14px;
+        line-height: 20px;     
+        color: rgba(110, 121, 140, 1);
+    }
+
+    @media (max-width: 500px) {
+        width: 240px;
+    }   
+}
