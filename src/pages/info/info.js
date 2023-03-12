@@ -3,6 +3,7 @@ import Maincharacter from '../../containers/maincharacter/maincharacter';
 import Goback from '../../components/goback/goback';
 
 function Info({ onClick, result }) {
+    console.log(result);
     return (
         <>
             <Goback onClick={onClick} />

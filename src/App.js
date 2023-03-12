@@ -6,7 +6,7 @@ import Main from './pages/main/main';
 import Info from './pages/info/info';
 
 function App() {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(localStorage.getItem("targetPage") ?? 1);
   const [search, setSearch] = useState(localStorage.getItem("targetName") ?? "");
   const [idCharacter, setIdCharacter] = useState(localStorage.getItem("targetId") ?? 1);
 
@@ -20,8 +20,9 @@ function App() {
       setSearch(e.target.value);      
       localStorage.setItem("targetName", e.target.value);
   }
-  const changPage = (i) => {
-    setPageNumber(i);
+  const changPage = (page) => {
+    setPageNumber(page);
+    localStorage.setItem("targetPage", page);
   }
 
   let [fetchedData, updateFetchedData] = useState([]);

@@ -1,6 +1,6 @@
 .header {
     max-width: 100%;
-    min-width: 240px;
+    min-width: 300px;
     margin: 86px auto 0px;
 
     border: 1px solid;
@@ -16,11 +16,6 @@
 
     @media (max-width: 680px) {
         max-width: 90%;
-        margin: 86px 25px 0px;
-    }
-
-    @media (max-width: 400px) {
-        max-width: 80%;
-        margin: 86px 25px 0px;
+        margin: 86px auto 0px;
     }
 }
