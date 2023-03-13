@@ -7,7 +7,7 @@ import Paginate from '../../components/paginate/paginate';
 
 function Main({ onChange, search, error, onClick, results, changPage, page, maxPage }) {
     return (
-        <>
+        <>             
             <Header />
             <Filter onChange={onChange} search={search}/>
             {error ? <div className='error'>There is nothing here.</div> :
@@ -15,7 +15,7 @@ function Main({ onChange, search, error, onClick, results, changPage, page, maxP
                 <Characters onClick={onClick} results={results} />
                 <Paginate changPage={changPage} page={page} maxPage={maxPage} />
               </>
-            }            
+            }                       
         </>
     )
 }

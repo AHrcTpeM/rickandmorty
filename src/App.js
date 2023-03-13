@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Main from './pages/main/main';
 import Info from './pages/info/info';
+import NotFound from './pages/notfound/notfound';
+import Auth from './components/auth/auth';
 
 function App() {
   const [pageNumber, setPageNumber] = useState(+localStorage.getItem("targetPage") ?? 1);
@@ -15,14 +17,15 @@ function App() {
     localStorage.setItem("targetId", id);
   };
 
-  const onChangeInput = (e) => {
-      setPageNumber(1);
-      setSearch(e.target.value);      
-      localStorage.setItem("targetName", e.target.value);
-  }
   const changPage = (page) => {
     setPageNumber(page);
     localStorage.setItem("targetPage", page);
+  }
+
+  const onChangeInput = (e) => {
+    changPage(1);
+    setSearch(e.target.value);      
+    localStorage.setItem("targetName", e.target.value);
   }
 
   let [fetchedData, updateFetchedData] = useState([]);
@@ -42,28 +45,35 @@ function App() {
 
   if (results) {
     return (
-      <BrowserRouter>      
-        <Routes>
-          <Route path='/' element={
-            <Main 
-              onChange={onChangeInput}
-              onClick={onClickCard} 
-              changPage={changPage}
-              search={search} 
-              results={results.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)}
-              page={pageNumber} 
-              maxPage={info?.pages}
-              error={error}
-            />}
-          />
-          <Route path='/info' element={
-            <Info 
-              onClick={onClickCard} 
-              result={results.find((e) => e.id === +idCharacter) ?? results[0]} 
-            />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <>
+        <Auth />
+        <BrowserRouter>        
+          <Routes>
+            <Route path='/' element={
+              <Main 
+                onChange={onChangeInput}
+                onClick={onClickCard} 
+                changPage={changPage}
+                search={search} 
+                results={results.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)}
+                page={pageNumber} 
+                maxPage={info?.pages}
+                error={error}
+              />}
+            />
+            <Route path='/info' element={
+              <Info 
+                onClick={onClickCard} 
+                result={results.find((e) => e.id === +idCharacter) ?? results[0]} 
+              />}
+            />
+            <Route path='*' element={
+              <NotFound onClick={onClickCard} />} 
+            />
+          </Routes>
+        </BrowserRouter>
+      </>
+      
     );
   }
 }

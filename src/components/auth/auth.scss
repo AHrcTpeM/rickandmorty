@@ -1,0 +1,56 @@
+#google_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.gFrame {
+    display: flex;
+    background-color: white;
+
+    border: 1px solid #dadce0;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    color: #3c4043;
+    cursor: pointer;
+    font-family: "Google Sans",arial,sans-serif;
+    font-size: 14px;
+    height: 40px;
+    letter-spacing: 0.25px;
+    outline: none;
+
+    &:hover {
+        background-color: #edf9f8;
+    }
+
+    .gImage {
+        width: 40px;
+        height: 40px;        
+        border-radius: 50%;
+    }
+
+    .gImage2 {
+        width: 30px;
+        height: 30px;        
+        border-radius: 50%;
+        padding-right: 10px;
+    }
+    
+    .flexCenter {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;        
+
+        #gName {            
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+    }
+    
+}
