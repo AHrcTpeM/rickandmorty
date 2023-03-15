@@ -13,6 +13,7 @@ function App() {
   const [idCharacter, setIdCharacter] = useState(localStorage.getItem("targetId") ?? 1);
 
   const onClickCard = (id) => {
+    window.scrollTo({ top: 0 });
     setIdCharacter(id);
     localStorage.setItem("targetId", id);
   };
