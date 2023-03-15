@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .env
+/build
+auth2.js
 
 # dependencies
 /node_modules
